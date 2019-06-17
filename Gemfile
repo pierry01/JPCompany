@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails', '4.2.11.1'
 gem 'rails-i18n'
