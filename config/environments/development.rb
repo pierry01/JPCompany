@@ -4,6 +4,12 @@ Rails.application.configure do
   # Foreman
   $stdout.sync = true
   
+  # Better Errors Config
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+  
+  # WebConsole Rails
+  config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
+  
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
