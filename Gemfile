@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails', '4.2.11.1'
 gem 'rails-i18n'
@@ -16,6 +14,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap', '3.3.7'
+  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootbox'
+end
 
 group :development, :test do
   gem 'byebug'
