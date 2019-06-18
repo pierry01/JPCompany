@@ -18,6 +18,18 @@
 <body>
   <%= render partial: 'layouts/backoffice_shared/navigation' %>
   
-  <%= yield %>
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <% if notice %>
+    <script>$.notify('<%= notice %>', 'success')</script>
+  <% end %>
 </body>
 </html>
