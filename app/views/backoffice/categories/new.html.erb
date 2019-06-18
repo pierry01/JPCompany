@@ -10,7 +10,17 @@
           </div>
           
           <div class="panel-body">
-            <div class="table-responsive">
+            <div class="col-lg-6">
+              <div class="table-responsive">
+                <%= form_for([:backoffice, @category]) do |f| %>
+                  <div class="form-group">
+                    <%= f.label 'Descrição' %>
+                    <%= f.text_field :description, class: 'form-control', placeholder: 'Ex: Animais/Pets' %>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-default">Salvar</button>
+                <% end %>
+              </div>
             </div>
           </div>
           
