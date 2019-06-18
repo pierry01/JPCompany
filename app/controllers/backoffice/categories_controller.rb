@@ -1,5 +1,6 @@
 class Backoffice::CategoriesController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_category, only: [:edit, :update]
   
   layout 'backoffice'
   
@@ -24,9 +25,18 @@ class Backoffice::CategoriesController < ApplicationController
   end
   
   def update
+    if @category.update(params_category)
+      redirect_to backoffice_categories_path, notice: "Categoria #{@category.description} alterada!"
+    else
+      render :edit
+    end
   end
   
   private
+  
+  def set_category
+    @category = Category.find(params[:id])
+  end
   
   def params_category
     params.require(:category).permit(:description)
