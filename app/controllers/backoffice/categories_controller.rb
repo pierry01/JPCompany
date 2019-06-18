@@ -1,9 +1,6 @@
-class Backoffice::CategoriesController < ApplicationController
-  before_action :authenticate_admin!
+class Backoffice::CategoriesController < BackofficeController
   before_action :set_category, only: [:edit, :update]
-  
-  layout 'backoffice'
-  
+
   def index
     @categories = Category.all
   end
