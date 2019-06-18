@@ -22,6 +22,11 @@
       <div class="table-responsive">
         <%= form_for([:backoffice, @admin]) do |f| %>
           <div class="form-group">
+            <%= f.label 'Nome do administrador' %>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Nome...' %>
+          </div>
+          
+          <div class="form-group">
             <%= f.label 'E-mail' %>
             <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail...' %>
           </div>
