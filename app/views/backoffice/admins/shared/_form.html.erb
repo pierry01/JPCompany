@@ -1,0 +1,45 @@
+<h1 class="page-header">Administradores</h1>
+
+<% if @admin.errors.any? %>
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    
+    <ul>
+      <% @admin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= action %> Administrador
+  </div>
+  
+  <div class="panel-body">
+    <div class="col-lg-6">
+      <div class="table-responsive">
+        <%= form_for([:backoffice, @admin]) do |f| %>
+          <div class="form-group">
+            <%= f.label 'E-mail' %>
+            <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail...' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label 'Senha' %>
+            <%= f.password_field :password, class: 'form-control', placeholder: 'Senha...' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label 'Confirmação de senha' %>
+            <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação de senha...' %>
+          </div>
+          
+          <button type="submit" class="btn btn-default">Salvar</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+</div>
