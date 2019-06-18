@@ -2,7 +2,7 @@ class Backoffice::CategoriesController < BackofficeController
   before_action :set_category, only: [:edit, :update]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order(:description)
   end
   
   def new
@@ -10,8 +10,9 @@ class Backoffice::CategoriesController < BackofficeController
   end
   
   def create
-    @category = Category.new(params_category)
-    if @category.save
+    @category = CategoryService.create(params_category)
+    
+    unless @category.errors.any?
       redirect_to backoffice_categories_path, notice: "Categoria #{@category.description} criada!"
     else
       render :new
