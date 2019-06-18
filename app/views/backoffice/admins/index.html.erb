@@ -14,6 +14,7 @@
               <th>#</th>
               <th>Nome</th>
               <th>E-mail</th>
+              <th>Acesso</th>
               <th style="text-align: right">
                 <%= link_to new_backoffice_admin_path, class: 'btn btn-success btn-circle' do %>
                   <i class="fa fa-plus"></i>
@@ -28,6 +29,7 @@
                 <td><%= admin.id %></td>
                 <td><%= admin.name %></td>
                 <td><%= admin.email %></td>
+                <td><%= admin.role_br %></td>
                 <td style="text-align: right">
                   <%= link_to edit_backoffice_admin_path(admin), class: 'btn btn-primary btn-circle' do %>
                     <i class="fa fa-edit"></i>
