@@ -1,0 +1,6 @@
+'pt-BR':
+  app:
+    name: JPCompany
+    site_subtitle: Site - JPCompany
+    backoffice_subtitle: Backoffice - JPCompany
+    profile_subtitle: Perfil - JPCompany
