@@ -27,17 +27,26 @@
           </div>
           
           <div class="form-group">
-            <%= f.label 'E-mail' %>
+            <%= f.label :email %>
             <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail...' %>
           </div>
           
           <div class="form-group">
-            <%= f.label 'Senha' %>
+            <%= f.label :role %>
+            <%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
+              <div class="radio">
+                <%= b.label { b.radio_button + b.text } %>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :password %>
             <%= f.password_field :password, class: 'form-control', placeholder: 'Senha...' %>
           </div>
           
           <div class="form-group">
-            <%= f.label 'Confirmação de senha' %>
+            <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmação de senha...' %>
           </div>
           
