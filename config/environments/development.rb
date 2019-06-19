@@ -18,7 +18,19 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
   
+  # Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  # Mailtrap
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => 'd7da7afdf2ac7b',
+    :password => '4651d6b7eee968',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
