@@ -2,5 +2,5 @@
   enums:
     admin:
       role:
-      full_access: Completo
-      restricted_access: Restrito
+        full_access: Completo
+        restricted_access: Restrito
