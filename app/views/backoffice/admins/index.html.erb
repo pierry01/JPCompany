@@ -13,7 +13,6 @@
             <tr>
               <th>#</th>
               <th>Nome</th>
-              <th>E-mail</th>
               <th>Acesso</th>
               <th style="text-align: right">
                 <% if policy(@admins).new? %>
@@ -30,9 +29,12 @@
               <tr>
                 <td><%= admin.id %></td>
                 <td><%= admin.name %></td>
-                <td><%= admin.email %></td>
                 <td><%= admin.role_i18n %></td>
                 <td style="text-align: right">
+                  <%= link_to edit_backoffice_send_mail_path(admin), remote: true, class: 'btn btn-info btn-circle' do %>
+                    <i class="fa fa-envelope"></i>
+                  <% end %>
+                  
                   <%= link_to edit_backoffice_admin_path(admin), class: 'btn btn-primary btn-circle' do %>
                     <i class="fa fa-edit"></i>
                   <% end %>
@@ -51,3 +53,6 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<%= render partial: 'backoffice/admins/shared/send_mail_modal' %>
