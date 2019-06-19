@@ -37,8 +37,8 @@
                     <i class="fa fa-edit"></i>
                   <% end %>
                   
-                  <% if current_admin.id != admin.id %>
-                    <%= link_to backoffice_admin_path(admin), method: :delete, data: { confirm: t('messages.confirm_with', item: admin.email ) }, class: 'btn btn-danger btn-circle' do %>
+                  <% if current_admin.id != admin.id && policy(@admins).destroy? %>
+                    <%= link_to backoffice_admin_path(admin), method: :delete, data: { confirm: t('messages.confirm_with', item: admin.name ) }, class: 'btn btn-danger btn-circle' do %>
                       <i class="fa fa-trash"></i>
                     <% end %>
                   <% end %>
