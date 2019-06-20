@@ -54,7 +54,12 @@ class Backoffice::AdminsController < BackofficeController
   
   def params_admin
     params[:admin].except!(:password, :password_confirmation) if password_blank?
-    params.require(:admin).permit(policy(@admin).permitted_attributes)
+    
+    if @admin.blank?
+      params.require(:admin).permit([:name, :role, :email, :password, :password_confirmation])
+    else
+      params.require(:admin).permit(policy(@admin).permitted_attributes)
+    end
   end
   
   def password_blank?
