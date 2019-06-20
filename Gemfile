@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pundit'
 gem 'tty-spinner'
 gem 'money-rails'
+gem 'paperclip'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
