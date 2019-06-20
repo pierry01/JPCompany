@@ -11,6 +11,7 @@ namespace :utils do
       show_spinner('Faker: Cadastrando USERS...') { %x(rake utils:generate_users)}
       show_spinner('Faker: Cadastrando ANÚNCIOS...') { %x(rake utils:generate_ads)}
       show_spinner('Cadastrando ADMINISTRADOR PADRÃO...') { %x(rake utils:generate_admin)}
+      show_spinner('Cadastrando USER PADRÃO...') { %x(rake utils:generate_user)}
       show_spinner('Cadastrando CATEGORIAS PADRÕES...') { %x(rake utils:generate_categories)}
     else
       puts 'Você não está em ambiente de desenvolvimento!'
@@ -70,6 +71,15 @@ namespace :utils do
         password: 123456,
         password_confirmation: 123456,
         role: 0 
+      )
+  end
+  
+  desc 'Cria o USER padrão'
+  task generate_user: :environment do
+      User.create!( 
+        email: 'user@user.com',
+        password: 123456,
+        password_confirmation: 123456,
       )
   end
   
