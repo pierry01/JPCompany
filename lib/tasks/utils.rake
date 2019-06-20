@@ -3,8 +3,11 @@ require 'faker'
 namespace :utils do
   desc 'Configura o ambiente de desenvolvimento'
   task setup: :environment do
+    images_path = Rails.root.join('public', 'system')
+    
     if Rails.env.development?
       show_spinner('Apagando DB...') { %x(rake db:drop) }
+      puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
       show_spinner('Criando DB...') { %x(rake db:create) }
       show_spinner('Migrando DB...') { %x(rake db:migrate) }
       show_spinner('Faker: Cadastrando ADMINISTRADORES...') { %x(rake utils:generate_admins)}
