@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'better_errors'
   gem 'faker'
+  gem 'lerolero_generator'
 end
 
 group :development do

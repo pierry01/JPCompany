@@ -2,7 +2,6 @@ require 'faker'
 
 namespace :utils do
   desc 'Cria administradores fake'
-  
   task generate_admins: :environment do
     puts 'Cadastrando ADMINISTRADORES...'
     10.times do
@@ -15,5 +14,19 @@ namespace :utils do
       )
     end
     puts 'Cadastrando ADMINISTRADORES... [OK]'
+  end
+  
+  desc 'Cria anúncios fake'
+  task generate_ads: :environment do
+    puts 'Cadastrando ANÚNCIOS...'
+    100.times do
+      Ad.create!( 
+        title: Faker::Lorem.sentence([2..5].sample),
+        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        member: Member.all.sample,
+        category: Category.all.sample
+      )
+    end
+    puts 'Cadastrando ANÚNCIOS... [OK]'
   end
 end
