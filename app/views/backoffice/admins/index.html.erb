@@ -13,6 +13,7 @@
             <tr>
               <th>#</th>
               <th>Nome</th>
+              <th>E-mail</th>
               <th>Acesso</th>
               <th style="text-align: right">
                 <% if policy(@admins).new? %>
@@ -29,6 +30,7 @@
               <tr>
                 <td><%= admin.id %></td>
                 <td><%= admin.name %></td>
+                <td><%= admin.email %></td>
                 <td><%= admin.role_i18n %></td>
                 <td style="text-align: right">
                   <% if current_admin.id != admin.id %>

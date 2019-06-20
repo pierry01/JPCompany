@@ -15,6 +15,7 @@ gem 'devise-i18n'
 gem 'enum_help'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pundit'
+gem 'tty-spinner'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
