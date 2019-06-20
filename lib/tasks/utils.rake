@@ -8,6 +8,7 @@ namespace :utils do
       show_spinner('Criando DB...') { %x(rake db:create) }
       show_spinner('Migrando DB...') { %x(rake db:migrate) }
       show_spinner('Faker: Cadastrando ADMINISTRADORES...') { %x(rake utils:generate_admins)}
+      show_spinner('Faker: Cadastrando USERS...') { %x(rake utils:generate_users)}
       show_spinner('Faker: Cadastrando ANÚNCIOS...') { %x(rake utils:generate_ads)}
       show_spinner('Cadastrando ADMINISTRADOR PADRÃO...') { %x(rake utils:generate_admin)}
       show_spinner('Cadastrando CATEGORIAS PADRÕES...') { %x(rake utils:generate_categories)}
@@ -16,7 +17,7 @@ namespace :utils do
     end
   end
   
-  desc 'Cria administradores fake'
+  desc 'Cria ADMINS fakes'
   task generate_admins: :environment do
     10.times do
       Admin.create!( 
@@ -29,7 +30,7 @@ namespace :utils do
     end
   end
   
-  desc 'Cria anúncios fake'
+  desc 'Cria ADS fake'
   task generate_ads: :environment do
     100.times do
       Ad.create!( 
@@ -43,7 +44,7 @@ namespace :utils do
     end
   end
   
-  desc 'Cria categorias padrões'
+  desc 'Cria CATEGORIES padrões'
   task generate_categories: :environment do
     categories = [ 'Animais',
                    'Acessórios',
@@ -61,7 +62,7 @@ namespace :utils do
     end
   end
   
-  desc 'Cria o Admin padrão'
+  desc 'Cria o ADMIN padrão'
   task generate_admin: :environment do
       Admin.create!( 
         name: 'Admin Padrão',
@@ -70,6 +71,17 @@ namespace :utils do
         password_confirmation: 123456,
         role: 0 
       )
+  end
+  
+  desc 'Cria USERS fake'
+  task generate_users: :environment do
+    100.times do
+      User.create!( 
+        email: Faker::Internet.email,
+        password: 123456,
+        password_confirmation: 123456
+      )
+    end
   end
   
   private
