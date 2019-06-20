@@ -31,8 +31,10 @@
                 <td><%= admin.name %></td>
                 <td><%= admin.role_i18n %></td>
                 <td style="text-align: right">
-                  <%= link_to edit_backoffice_send_mail_path(admin), remote: true, class: 'btn btn-info btn-circle' do %>
-                    <i class="fa fa-envelope"></i>
+                  <% if current_admin.id != admin.id %>
+                    <%= link_to edit_backoffice_send_mail_path(admin), remote: true, class: 'btn btn-info btn-circle' do %>
+                      <i class="fa fa-envelope"></i>
+                    <% end %>
                   <% end %>
                   
                   <%= link_to edit_backoffice_admin_path(admin), class: 'btn btn-primary btn-circle' do %>
@@ -55,4 +57,4 @@
 </div>
 
 <!-- Modal -->
-<%= render partial: 'backoffice/admins/shared/send_mail_modal' %>
+<%= render partial: 'backoffice/admins/shared/modal_send_mail' %>
