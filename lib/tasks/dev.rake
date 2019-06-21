@@ -61,7 +61,7 @@ namespace :dev do
     10.times do
       Ad.create!( 
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        description: LeroleroGenerator.paragraph,
         user: User.last,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",

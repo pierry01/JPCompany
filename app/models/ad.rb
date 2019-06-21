@@ -10,5 +10,6 @@ class Ad < ActiveRecord::Base
   monetize :price_cents
   
   # Scopes
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  scope :to_the, ->(user) { where(user: user) }
 end
