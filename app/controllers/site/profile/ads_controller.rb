@@ -5,6 +5,21 @@ class Site::Profile::AdsController < Site::ProfileController
     @ads = Ad.includes(:category).to_the(current_user)
   end
   
+  def new
+    @ad = Ad.new
+  end
+  
+  def create
+    @ad = Ad.new(params_ad)
+    @ad.user = current_user
+    
+    if @ad.save
+      redirect_to site_profile_ads_path, notice: 'Anúncio criado!'
+    else
+      render :new
+    end
+  end
+  
   def edit
   end
   

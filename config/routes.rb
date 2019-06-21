@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'home', to: 'home#index'
     
     namespace :profile do
-      resources :ads, only: [:index, :edit, :update]
+      resources :ads, except: :destroy
       resources :dashboard, only: :index
     end
   end
