@@ -1,8 +1,7 @@
 class Ad < ActiveRecord::Base
   belongs_to :user
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   
-  # Validates
   validates :title, :description, :category, :price, presence: true
   validates :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
@@ -14,7 +13,6 @@ class Ad < ActiveRecord::Base
   # gem money-rails
   monetize :price_cents
   
-  # Scopes
   scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(user) { where(user: user) }
 end

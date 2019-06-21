@@ -1,8 +1,8 @@
 options = {
     filter_html: true,
     link_attributes: {
-      rel: "nofollow",
-      target: "_blank"
+      rel: 'nofollow',
+      target: '_blank'
     }
 }
 

@@ -41,7 +41,7 @@ namespace :dev do
     
   desc 'Cria ADS fake'
   task generate_ads: :environment do
-    30.times do
+    50.times do
       Ad.create!( 
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: LeroleroGenerator.paragraph,
@@ -121,7 +121,7 @@ namespace :dev do
   
   desc 'Cria USERS fake'
   task generate_users: :environment do
-    30.times do
+    10.times do
       User.create!( 
         email: Faker::Internet.email,
         password: 123456,
