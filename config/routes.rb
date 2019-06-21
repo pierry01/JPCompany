@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       resources :ads, except: :destroy
       resources :dashboard, only: :index
     end
+    
+    resources :ad_detail, only: [:show]
   end
   
   devise_for :admins, skip: :registrations
