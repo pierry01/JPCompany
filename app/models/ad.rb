@@ -15,5 +15,5 @@ class Ad < ActiveRecord::Base
   
   scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
   scope :to_the, ->(user) { where(user: user) }
-  scope :where_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id) { where(category: id) }
 end

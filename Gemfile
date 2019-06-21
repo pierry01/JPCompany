@@ -19,6 +19,7 @@ gem 'tty-spinner'
 gem 'money-rails'
 gem 'paperclip'
 gem 'jquery-ui-rails'
+gem 'friendly_id'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
