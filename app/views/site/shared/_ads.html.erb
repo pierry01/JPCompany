@@ -1,0 +1,25 @@
+<% @ads.each do |ad| %>
+  <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag ad.picture.url(:medium) %>
+      
+      <div class="caption">
+        <h4 class="pull-right"><%= humanized_money_with_symbol ad.price %></h4>
+        <h4><%= link_to ad.title.truncate(17), site_ad_detail_path(ad), remote: true %></h4>
+        </h4>
+        <p><%= ad.description.truncate(100) %></p>
+      </div>
+      
+      <div class="ratings">
+        <p class="pull-right">12 reviews</p>
+        <p>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>

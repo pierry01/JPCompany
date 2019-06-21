@@ -3,9 +3,10 @@
     <%= render partial: 'site/shared/sidebar' %>
 
     <div id="home-detail" class="col-md-9">
-      <%= render partial: 'site/shared/carousel' %>
-
       <div class="row">
+        <div class="well">
+          <h3>Listando anúncios de <%= @ads.first.category.description %></h3>
+        </div>
         <%= render partial: 'site/shared/ads' %>
       </div>
     </div>
