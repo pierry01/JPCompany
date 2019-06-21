@@ -18,6 +18,7 @@ gem 'pundit'
 gem 'tty-spinner'
 gem 'money-rails'
 gem 'paperclip'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'

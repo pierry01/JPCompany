@@ -7,10 +7,6 @@
     <%= stylesheet_link_tag 'site', media: 'all' %>
     <%= stylesheet_link_tag 'site/profile', media: 'all' %>
     
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
-    <%= javascript_include_tag 'site/profile' %>
-    
     <%= csrf_meta_tags %>
   </head>
   
@@ -45,6 +41,13 @@
         </div>
       </div>
     </div>
+    
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'site/profile' %>
+    
+    <%#= javascript_include_tag 'site/profile/ads' %>
+    <%= yield :javascripts %>
     
     <% if notice %>
       <%= javascript_tag "$.notify('#{notice}', 'success')" %>
