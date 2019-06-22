@@ -14,7 +14,16 @@
     
     <%= render partial: 'layouts/site_shared/navigation' %>
     
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <%= render partial: 'layouts/site_shared/sidebar' %>
+        <div id="home-detail" class="col-md-9">
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <%= render partial: 'layouts/site_shared/footer' %>
     
