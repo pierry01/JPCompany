@@ -1,4 +1,7 @@
 class Ad < ActiveRecord::Base
+  # Constants
+  QTT_PER_PAGE = 6
+  
   belongs_to :user
   belongs_to :category, counter_cache: true
   
@@ -14,12 +17,12 @@ class Ad < ActiveRecord::Base
   monetize :price_cents
   
   #Scopes
-  scope :descending_order, ->(quantity = 9, page = 1) { 
-    limit(quantity).order(created_at: :desc).page(page).per(6) 
+  scope :descending_order, ->(page) { 
+    order(created_at: :desc).page(page).per(QTT_PER_PAGE) 
   }
   
-  scope :search, ->(q, page = 1) { 
-    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(6)
+  scope :search, ->(term) { 
+    where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
   
   scope :to_the, ->(user) { where(user: user) }
