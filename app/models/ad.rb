@@ -13,7 +13,15 @@ class Ad < ActiveRecord::Base
   # gem money-rails
   monetize :price_cents
   
-  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  #Scopes
+  scope :descending_order, ->(quantity = 9, page = 1) { 
+    limit(quantity).order(created_at: :desc).page(page).per(6) 
+  }
+  
+  scope :search, ->(q, page = 1) { 
+    where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(6)
+  }
+  
   scope :to_the, ->(user) { where(user: user) }
   scope :by_category, ->(id) { where(category: id) }
 end
