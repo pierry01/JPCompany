@@ -17,6 +17,7 @@ namespace :dev do
       show_spinner('Cadastrando ADMINISTRADOR PADRÃO...') { %x(rake dev:generate_admin)}
       show_spinner('Cadastrando USER PADRÃO...') { %x(rake dev:generate_user)}
       show_spinner('Cadastrando ADS para o USER PADRÃO...') { %x(rake dev:generate_ads_to_user)}
+      show_spinner('Faker: Cadastrando COMENTÁRIOS...') { %x(rake dev:generate_comments)}
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
@@ -97,24 +98,24 @@ namespace :dev do
   
   desc 'Cria o ADMIN padrão'
   task generate_admin: :environment do
-      Admin.create!( 
-        name: 'Admin Padrão',
-        email: 'admin@admin.com',
-        password: 123456,
-        password_confirmation: 123456,
-        role: 0 
-      )
+    Admin.create!( 
+      name: 'Admin Padrão',
+      email: 'admin@admin.com',
+      password: 123456,
+      password_confirmation: 123456,
+      role: 0 
+    )
   end
   
   #########################################
   
   desc 'Cria o USER padrão'
   task generate_user: :environment do
-      User.create!( 
-        email: 'user@user.com',
-        password: 123456,
-        password_confirmation: 123456,
-      )
+    User.create!( 
+      email: 'user@user.com',
+      password: 123456,
+      password_confirmation: 123456,
+    )
   end
   
   #########################################
@@ -127,6 +128,21 @@ namespace :dev do
         password: 123456,
         password_confirmation: 123456
       )
+    end
+  end
+  
+  #########################################
+
+  desc 'Cria COMENTÁRIOS fake'
+  task generate_comments: :environment do
+    Ad.all.each do |ad|
+      (Random.rand(5)).times do
+        Comment.create!(
+          body: Faker::Lorem.paragraph,
+          user: User.all.sample,
+          ad: ad
+        )
+      end
     end
   end
   

@@ -2,8 +2,10 @@ class Ad < ActiveRecord::Base
   # Constants
   QTT_PER_PAGE = 6
   
+  # Associations
   belongs_to :user
   belongs_to :category, counter_cache: true
+  has_many :comments
   
   validates :title, :description, :category, :price, presence: true
   validates :picture, :finish_date, presence: true
