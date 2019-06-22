@@ -1,11 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div id="home-detail" class="col-md-9">
-      <% if controller_path == 'site/home' %>
-        <%= render partial: 'layouts/site_shared/carousel' %>
-      <% end %>
-    </div>
-  </div>  
-</div>
+<%= content_for :carousel do %>
+  <%= render partial: 'layouts/site_shared/carousel' %>
+<% end %>
 
 <%= render partial: 'site/shared/ads' %>
