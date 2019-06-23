@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     
     resources :ad_detail, only: [:show]
     resources :categories, only: [:show]
+    resources :comments, only: [:show, :create]
   end
   
   devise_for :admins, skip: :registrations
