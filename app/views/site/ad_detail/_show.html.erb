@@ -6,14 +6,13 @@
     <h4><a href="#"><%= @ad.title %></a></h4>
     <p><%= @ad.description %></p>
   </div>
-  
+</div>
+
+<div class="well well-sm">
   <div class="ratings">
-    <p class="pull-right">3 reviews</p>
-    <p>
-      <%= rating_for @ad, 'quality' %>
-    </p>
+    <p class="pull-right"><%= @ad.comments.count %> comentários</p>
+    <p><%= rating_for @ad, 'quality' %></p>
   </div>
-  
 </div>
 
 <div class="well">

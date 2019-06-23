@@ -4,10 +4,9 @@
       <%= comment.user.email %>
       <span class="pull-right"><%= l comment.created_at %></span>
       <p><%= comment.body %></p>
-      <% if current_user.present? %>
-        <% if comment.user.id == current_user.id %>
-          <%= rating_for_user @ad, current_user, 'quality' %>
-        <% end %>
+      
+      <% if (current_user.present?) && (comment.user.id == current_user.id) %>
+        <%= rating_for_user @ad, current_user, 'quality' %>
       <% end %>
     </div>
   </div>
