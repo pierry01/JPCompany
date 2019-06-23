@@ -2,6 +2,9 @@ class Ad < ActiveRecord::Base
   # Constants
   QTT_PER_PAGE = 6
   
+  #gem ratyrate
+  ratyrate_rateable 'quality'
+  
   # Associations
   belongs_to :user
   belongs_to :category, counter_cache: true

@@ -23,6 +23,7 @@ gem 'friendly_id'
 gem 'wiselinks'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'ratyrate'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'

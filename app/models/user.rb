@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # gem ratyrate
+  ratyrate_rater
+  
+  #Associations
   has_many :ads
   
   # Include default devise modules. Others available are:
