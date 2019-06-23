@@ -16,9 +16,7 @@
     </div>
   <% else %>
     <div class="text-right">
-      <button type="button" class="btn btn-success" disabled >
-        Efetue login para comentar
-      </button>
+      <%= link_to 'Efetue login para comentar', new_user_session_path, class: 'btn btn-successbtn btn-success' %>
     </div>
   <% end %>
   

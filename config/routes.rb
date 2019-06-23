@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :dashboard, only: :index
     end
     
-    resources :ad_detail, only: [:show]
+    resources :ad_detail, only: [:index, :show]
     resources :categories, only: [:show]
     resources :comments, only: [:show, :create]
   end
