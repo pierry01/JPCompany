@@ -30,6 +30,9 @@ class Ad < ActiveRecord::Base
     where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
   
+  scope :by_category, ->(id, page) { 
+    where(category: id).page(page).per(QTT_PER_PAGE).order(created_at: :desc)
+  }
+  
   scope :to_the, ->(user) { where(user: user) }
-  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 end

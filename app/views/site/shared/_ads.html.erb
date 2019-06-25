@@ -7,9 +7,13 @@
         <h4 class="pull-right"><%= humanized_money_with_symbol ad.price %></h4>
         <h4>
           <%= link_to ad.title.truncate(17), site_ad_detail_path(ad), 
-          remote: true, data: { push: :partial } %>
+          data: { push: :partial } %>
         </h4>
         <p><%= ad.description.truncate(100) %></p>
+      </div>
+      <div class="ratings" style="padding: 5px;">
+        <p class="pull-right"><%= ad.rates('quality').count %> <%= t('labels.reviews') %></p>
+        <%= rating_for ad, 'quality', star_path: '/images/ratyrate' %>
       </div>
     </div>
   </div>
