@@ -2,7 +2,7 @@ class Site::Profile::AdsController < Site::ProfileController
   before_action :set_ad, only: [:edit, :update]
   
   def index
-    @ads = Ad.includes(:category).to_the(current_user)
+    @ads = Ad.includes(:category).order(created_at: :desc).to_the(current_user)
   end
   
   def new
