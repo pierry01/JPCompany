@@ -1,10 +1,10 @@
 $.fn.raty.defaults.half = false;
 $.fn.raty.defaults.halfShow = true;
-$.fn.raty.defaults.path = "/assets";
+$.fn.raty.defaults.path = '/assets';
 $.fn.raty.defaults.cancel = false;
 
-$(function(){
-  $(".star").each(function() {
+$(document).bind('ready ajaxComplete', function(){
+  $('.star').each(function() {
     var $readonly = ($(this).attr('data-readonly') == 'true');
     var $half     = ($(this).attr('data-enable-half') == 'true');
     var $halfShow = ($(this).attr('data-half-show') == 'true');

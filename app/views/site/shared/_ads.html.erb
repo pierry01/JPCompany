@@ -11,11 +11,6 @@
         </h4>
         <p><%= ad.description.truncate(100) %></p>
       </div>
-      
-      <div class="ratings" style="padding: 5px">
-        <p class="pull-right"><%= ad.rates('quality').count %> <%= t('labels.reviews') %></p>
-        <%= rating_for ad, 'quality', star_path: '/images/ratyrate', style: 'margin-bottom: 10px' %>
-      </div>
     </div>
   </div>
 <% end %>
