@@ -26,6 +26,8 @@
             <% end %>
           
             <%= f.submit "#{t('labels.enter')}", class: 'btn btn-lg btn-success btn-block' %>
+            <br>
+            <%= render partial: 'users/shared/links' %>
           <% end %>
           <br>
         </div>
@@ -33,9 +35,3 @@
     </div>
   </div>
 </div>
-
-<% flash.each do |key, value| %>
-  <script>
-    $.notify("<%= value %>", 'info')
-  </script>
-<% end %>
