@@ -111,23 +111,37 @@ namespace :dev do
   
   desc 'Cria o USER padrão'
   task generate_user: :environment do
-    User.create!( 
+    user = User.new( 
       email: 'user@user.com',
       password: 123456,
       password_confirmation: 123456,
     )
+    
+    user.build_profile_user
+    
+    user.profile_user.first_name = 'Jean'
+    user.profile_user.second_name = 'Mendonça'
+    
+    user.save!
   end
   
   #########################################
   
   desc 'Cria USERS fake'
   task generate_users: :environment do
-    10.times do
-      User.create!( 
+    30.times do
+      user = User.new( 
         email: Faker::Internet.email,
         password: 123456,
         password_confirmation: 123456
       )
+      
+      user.build_profile_user
+      
+      user.profile_user.first_name = Faker::Name.first_name
+      user.profile_user.second_name = Faker::Name.last_name
+      
+      user.save!
     end
   end
   
