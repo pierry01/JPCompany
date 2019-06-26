@@ -10,12 +10,12 @@ namespace :dev do
       show_spinner('Apagando public/system...') { %x(rm -rf #{images_path})}
       show_spinner('Criando DB...') { %x(rake db:create) }
       show_spinner('Migrando DB...') { %x(rake db:migrate) }
+      show_spinner('Cadastrando ADMINISTRADOR PADRÃO...') { %x(rake dev:generate_admin)}
       show_spinner('Faker: Cadastrando ADMINISTRADORES...') { %x(rake dev:generate_admins)}
+      show_spinner('Cadastrando USER PADRÃO...') { %x(rake dev:generate_user)}
       show_spinner('Faker: Cadastrando USERS...') { %x(rake dev:generate_users)}
       show_spinner('Cadastrando CATEGORIAS PADRÕES...') { %x(rake dev:generate_categories)}
       show_spinner('Faker: Cadastrando ANÚNCIOS...') { %x(rake dev:generate_ads)}
-      show_spinner('Cadastrando ADMINISTRADOR PADRÃO...') { %x(rake dev:generate_admin)}
-      show_spinner('Cadastrando USER PADRÃO...') { %x(rake dev:generate_user)}
       show_spinner('Cadastrando ADS para o USER PADRÃO...') { %x(rake dev:generate_ads_to_user)}
       show_spinner('Faker: Cadastrando COMENTÁRIOS...') { %x(rake dev:generate_comments)}
     else

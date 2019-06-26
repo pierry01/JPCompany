@@ -100,9 +100,12 @@ ActiveRecord::Schema.define(version: 20190625225334) do
     t.string   "first_name"
     t.string   "second_name"
     t.date     "birthdate"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "profile_users", ["user_id"], name: "index_profile_users_on_user_id"
 
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
