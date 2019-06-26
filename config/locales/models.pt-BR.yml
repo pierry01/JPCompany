@@ -2,8 +2,8 @@
   helpers:
     label:
       user[profile_user_attributes]:
-        first_name: Primeiro Nome
-        second_name: Segundo Nome
+        first_name: Nome
+        second_name: Sobrenome
   activerecord:
     models:
       user:
