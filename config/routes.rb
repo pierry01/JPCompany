@@ -27,7 +27,11 @@ Rails.application.routes.draw do
   end
   
   devise_for :admins, skip: :registrations
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  
+  devise_for :users, controllers: { 
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   
   root 'site/home#index'
 

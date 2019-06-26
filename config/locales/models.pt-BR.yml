@@ -61,6 +61,6 @@
         id: Código
         created_at: Criado em
         updated_at: Atualizado em
-        first_name: Primeiro nome
-        second_name: Segundo nome
+        first_name: Nome
+        second_name: Sobrenome
         birthdate: Data de nascimento
