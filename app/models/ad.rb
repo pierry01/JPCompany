@@ -35,4 +35,5 @@ class Ad < ActiveRecord::Base
   }
   
   scope :to_the, ->(user) { where(user: user) }
+  scope :random, ->(quantity) { limit(quantity).order("RANDOM()") }
 end

@@ -12,6 +12,9 @@ body {
     width: 100%;
 }
 
+#carousel-images {
+    width: 100%;
+}
 .carousel-holder {
     margin-bottom: 30px;
     margin-left: 0px;
