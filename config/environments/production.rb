@@ -1,6 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  begin
+  require 'minitest/autorun'
+  rescue LoadError => e
+    raise e unless ENV['RAILS_ENV'] == "production"
+  end
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
