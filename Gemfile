@@ -47,5 +47,3 @@ group :production do
   gem 'activerecord-postgresql-adapter'
   gem 'rails_12factor'
 end
-
-ruby '2.3.3'
