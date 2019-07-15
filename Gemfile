@@ -37,6 +37,10 @@ group :development, :test do
   gem 'lerolero_generator'
 end
 
+group :production do
+  gem 'pg', '~> 0.18'
+end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
