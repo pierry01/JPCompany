@@ -4,7 +4,6 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'rails', '4.2.11.1'
 gem 'rails-i18n'
 gem 'foreman'
-gem 'sqlite3', '~> 1.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -35,10 +34,12 @@ group :development, :test do
   gem 'better_errors'
   gem 'faker'
   gem 'lerolero_generator'
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rails-erd'
+  gem 'pg'
 end
