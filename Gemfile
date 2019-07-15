@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'enum_help'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pundit'
 gem 'tty-spinner'
 gem 'money-rails'
@@ -43,7 +42,9 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'pg', '~> 0.21'
   gem 'activerecord-postgresql-adapter'
   gem 'rails_12factor'
 end
+
+gem 'sdoc', '~> 0.4.0', group: :doc
