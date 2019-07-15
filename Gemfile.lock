@@ -31,6 +31,8 @@ GEM
       activemodel (= 4.2.11.1)
       activesupport (= 4.2.11.1)
       arel (~> 6.0)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activesupport (4.2.11.1)
       i18n (~> 0.7)
       minitest (~> 5.1)
@@ -245,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   better_errors
   bootstrap_sb_admin_base_v2
   byebug
@@ -263,7 +266,7 @@ DEPENDENCIES
   lerolero_generator
   money-rails
   paperclip
-  pg
+  pg (>= 0.18, < 2.0)
   pundit
   rails (= 4.2.11.1)
   rails-assets-bootbox!

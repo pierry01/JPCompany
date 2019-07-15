@@ -41,5 +41,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rails-erd'
-  gem 'pg'
+end
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'activerecord-postgresql-adapter'
 end
