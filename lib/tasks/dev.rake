@@ -1,8 +1,8 @@
 namespace :dev do
-  require 'faker'
-  
   desc 'Configura o ambiente de desenvolvimento'
-  task setup: :environment do
+  task setup: :environment 
+    require 'faker'
+  
     images_path = Rails.root.join('public', 'system')
     
     if Rails.env.development?
