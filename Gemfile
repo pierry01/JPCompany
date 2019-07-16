@@ -30,9 +30,9 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'better_errors'
+  gem 'sqlite3', '~> 1.3.6'
   gem 'faker'
   gem 'lerolero_generator'
-  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development do
