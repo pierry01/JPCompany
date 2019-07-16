@@ -1,5 +1,5 @@
 class Backoffice::CategoriesController < BackofficeController
-  before_action :set_category, only: [:edit, :update]
+  before_action :set_category, only: [:destroy, :edit, :update]
 
   def index
     @categories = Category.all.order(:description)
@@ -27,6 +27,14 @@ class Backoffice::CategoriesController < BackofficeController
       redirect_to backoffice_categories_path, notice: "Categoria #{@category.description} alterada!"
     else
       render :edit
+    end
+  end
+  
+  def destroy
+    if @category.destroy
+      redirect_to backoffice_categories_path, notice: 'Categoria excluída!'
+    else
+      render :index
     end
   end
   

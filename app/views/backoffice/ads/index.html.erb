@@ -31,9 +31,11 @@
                     <i class="fa fa-edit"></i>
                   <% end %>
                   
-                  <button type="button" disabled="disabled" class="btn btn-danger btn-circle">
+                  <%= link_to backoffice_ad_path(ad),
+                    method: :delete, class: 'btn btn-danger btn-circle',
+                    data: { confirm: ("Deseja excluir #{ad.title}?") } do %>
                     <i class="fa fa-trash"></i>
-                  </button>
+                  <% end %>
                 </td>
               </tr>
             <% end %>

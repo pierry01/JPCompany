@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   include FriendlyId
   friendly_id :description, use: :slugged
   
-  has_many :ads
+  has_many :ads, dependent: :delete_all
   
   validates_presence_of :description
   

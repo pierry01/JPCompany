@@ -1,5 +1,5 @@
 class Backoffice::AdsController < BackofficeController
-  before_action :set_ad, only: [:edit, :update]
+  before_action :set_ad, only: [:destroy, :edit, :update]
   
   def index
     @ads = Ad.order(created_at: :desc).page(params[:page]).per(10)
@@ -28,6 +28,14 @@ class Backoffice::AdsController < BackofficeController
       redirect_to backoffice_ads_path, notice: 'Anúncio atualizado!'
     else
       render :edit
+    end
+  end
+  
+  def destroy
+    if @ad.destroy
+      redirect_to backoffice_ads_path, notice: 'Anúncio excluído!'
+    else
+      render :index
     end
   end
   
