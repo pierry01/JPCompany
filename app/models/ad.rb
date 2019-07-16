@@ -7,6 +7,7 @@ class Ad < ActiveRecord::Base
   
   # Associations
   belongs_to :user
+  belongs_to :admin
   belongs_to :category, counter_cache: true
   has_many :comments
   

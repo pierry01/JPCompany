@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20190625225334) do
   create_table "ads", force: :cascade do |t|
     t.string   "title",                limit: 255
     t.text     "description"
+    t.integer  "admin_id"
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at",                                   null: false
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20190625225334) do
     t.date     "finish_date"
   end
 
+  add_index "ads", ["admin_id"], name: "index_ads_on_admin_id"
   add_index "ads", ["category_id"], name: "index_ads_on_category_id"
   add_index "ads", ["user_id"], name: "index_ads_on_user_id"
 

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :backoffice do
+  get 'ads/index'
+  end
+
   post '/rate' => 'rater#create', :as => 'rate'
   
   get 'backoffice', to: 'backoffice/dashboard#index'
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :send_mail, only: [:edit, :create]
     resources :categories, except: [:show, :destroy]
+    resources :ads, except: :show
     resources :admins, except: :show
     resources :diagrams, only: :index
     get 'dashboard', to: 'dashboard#index'
