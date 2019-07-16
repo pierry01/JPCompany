@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190625225334) do
+ActiveRecord::Schema.define(version: 20190716173255) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,10 +42,12 @@ ActiveRecord::Schema.define(version: 20190625225334) do
     t.integer  "picture_file_size",    limit: 8
     t.datetime "picture_updated_at"
     t.date     "finish_date"
+    t.string   "slug"
   end
 
   add_index "ads", ["admin_id"], name: "index_ads_on_admin_id"
   add_index "ads", ["category_id"], name: "index_ads_on_category_id"
+  add_index "ads", ["slug"], name: "index_ads_on_slug", unique: true
   add_index "ads", ["user_id"], name: "index_ads_on_user_id"
 
   create_table "average_caches", force: :cascade do |t|

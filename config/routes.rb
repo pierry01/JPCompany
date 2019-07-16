@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   namespace :backoffice do
+  get 'users/index'
+  end
+
+  namespace :backoffice do
   get 'ads/index'
   end
 
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :ads, except: :show
     resources :admins, except: :show
+    resources :users, except: [:show, :new, :create]
     resources :diagrams, only: :index
     get 'dashboard', to: 'dashboard#index'
   end

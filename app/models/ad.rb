@@ -1,10 +1,7 @@
 class Ad < ActiveRecord::Base
   # Constants
   QTT_PER_PAGE = 6
-  
-  #gem ratyrate
-  ratyrate_rateable 'quality'
-  
+
   # Associations
   belongs_to :user
   belongs_to :admin
@@ -21,6 +18,13 @@ class Ad < ActiveRecord::Base
   
   # gem money-rails
   monetize :price_cents
+  
+  # gem ratyrate
+  ratyrate_rateable 'quality'
+  
+  # gem friendly_id
+  include FriendlyId
+  friendly_id :title, use: :slugged
   
   #Scopes
   scope :descending_order, ->(page) { 

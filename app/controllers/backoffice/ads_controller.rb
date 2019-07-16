@@ -42,7 +42,7 @@ class Backoffice::AdsController < BackofficeController
   private
   
   def set_ad
-    @ad = Ad.find(params[:id])
+    @ad = Ad.friendly.find(params[:id])
   end
   
   def params_ad
