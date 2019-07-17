@@ -12,6 +12,16 @@ class Site::CommentsController < SiteController
     end
   end
   
+  def destroy
+    @comment = Comment.find(params[:id])
+    
+    if @comment.destroy
+      redirect_to request.referrer, notice: 'Comentário excluído!'
+    else
+      render :index
+    end
+  end
+  
   private
   
   def comment_params

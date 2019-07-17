@@ -5,8 +5,15 @@
       
       <p id="time-ago" class="pull-right"><strong>
         <%= time_ago_in_words(comment.created_at) %>
+        
+        <% if comment.user == current_user %>
+          <%= link_to site_comment_path(comment),
+            method: :delete, class: 'btn btn-danger btn-circle',
+            data: { confirm: ("Deseja excluir #{comment.body.truncate(30)}?") } do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        <% end %>
       </strong></p>
-      
       <p><%= comment.body %></p>
     </div>
   </div>
