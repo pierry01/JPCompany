@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   ratyrate_rater
   
   #Associations
-  has_many :ads
+  has_many :ads, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
   has_one :profile_user
   accepts_nested_attributes_for :profile_user
   
