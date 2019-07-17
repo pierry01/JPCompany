@@ -47,6 +47,6 @@ class Backoffice::AdsController < BackofficeController
   
   def params_ad
     params.require(:ad).permit( :id, :title, :picture, :finish_date, 
-      :category_id, :admin_id, :user_id, :price, :description, :slug )
+      :category_id, :admin_id, :price, :description, :slug )
   end
 end
