@@ -6,7 +6,7 @@ class Ad < ActiveRecord::Base
   belongs_to :user
   belongs_to :admin
   belongs_to :category, counter_cache: true
-  has_many :comments
+  has_many :comments, dependent: :delete_all
   
   validates :title, :description, :category, :price, presence: true
   validates :picture, :finish_date, presence: true
