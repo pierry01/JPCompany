@@ -3,13 +3,11 @@
     <div class="col-md-12">
       <%= comment.user.email %>
       
-      <p id="time-ago" class="pull-right"><strong><%= time_ago_in_words(comment.created_at) %></strong></p>
+      <p id="time-ago" class="pull-right"><strong>
+        <%= time_ago_in_words(comment.created_at) %>
+      </strong></p>
       
       <p><%= comment.body %></p>
-
-      <% if (current_user.present?) && (comment.user.id == current_user.id) %>
-        <%= rating_for_user @ad, current_user, 'quality', star_path: '/images/ratyrate' %>
-      <% end %>
     </div>
   </div>
   <hr>

@@ -1,6 +1,6 @@
 class Site::CommentsController < SiteController
   before_action :authenticate_user!
-  
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user

@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     
     resources :ad_detail, only: [:index, :show]
     resources :categories, only: [:show]
-    resources :comments, only: [:show, :create]
+    resources :comments, only: [:show, :create, :destroy]
   end
   
   devise_for :admins, skip: :registrations
