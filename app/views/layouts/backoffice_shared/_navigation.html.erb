@@ -14,7 +14,8 @@
         
         <ul class="dropdown-menu dropdown-user">
           <li>
-            <%= link_to destroy_admin_session_path, method: :delete do %>
+            <%= link_to destroy_admin_session_path, method: :delete,
+            data: { confirm: ("Deseja sair?") } do %>
               <i class="fa fa-sign-out"></i> Sair
             <% end %>
           </li>

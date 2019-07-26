@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # gem devise
   before_filter :store_current_location, unless: :devise_controller?
+  skip_before_action :verify_authenticity_token
   
   # gem pundit
   include Pundit

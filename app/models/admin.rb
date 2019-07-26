@@ -1,4 +1,7 @@
 class Admin < ActiveRecord::Base
+  # Associations
+  has_many :ads, dependent: :delete_all
+  
   # Enums
   enum role: {full_access: 0, restricted_access: 1}
   

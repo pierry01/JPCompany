@@ -33,12 +33,16 @@ group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
   gem 'faker'
   gem 'lerolero_generator'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rails-erd'
+  gem 'better_errors'
 end
 
 group :production do

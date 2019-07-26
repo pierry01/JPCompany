@@ -27,7 +27,8 @@
             <%= link_to "#{t('top_menu.profile')}", site_profile_dashboard_index_path %>
           </li>
           <li>
-            <%= link_to "#{t('top_menu.logout')}", destroy_user_session_path, method: :delete %>
+            <%= link_to "#{t('top_menu.logout')}", destroy_user_session_path,
+            data: { confirm: ("Deseja sair?") }, method: :delete %>
           </li>
         <% end %>
       </ul>
